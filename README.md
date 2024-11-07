@@ -1,2 +1,2 @@
-# mts
-A Custom Wordpress Theme for Meridian Tech Solutions
+# Pure Folio
+A clean and versatile WordPress theme designed for creating stunning portfolio websites.
