@@ -1,0 +1,80 @@
+.portfoliosPage.layout {
+    min-height: 90vh;
+}
+.thePortfolios {
+    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+}
+@media screen and (min-width: 341px) {
+    .thePortfolios {
+        grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    }
+}
+
+.folioCard {
+    color: #fff;
+    overflow: hidden;
+    height: 15.75rem;
+    border: 1px solid var(--outline);
+    background: var(--overlay-clr);
+}
+.folioCard .ovrLay {
+    opacity: 1;
+    backdrop-filter: blur(5px);
+    background: var(--overlay-clr);
+}
+
+.folioCard .cardBody {
+    padding: 0.8rem;
+    color: #fff;
+    position: relative;
+}
+.folioCard a {
+    color: #fff
+}
+
+.folioCard label {
+    font-size: 1.5em;
+}
+
+.folioCard span {
+    font-family: var(--font-four);
+    font-size: .95em;
+    display: inline-block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.folioCard .btn {
+    margin: 10px auto;
+    color: inherit;
+    display: inline-block;
+}
+@media screen and (min-width: 992px) {
+    .folioCard .ovrLay {
+        opacity: 0;
+    }
+    .folioCard:hover .ovrLay {
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .folioCard label {
+        font-size: 1.4em;
+    }
+}
+
+
+/* for front page */
+@media screen and (min-width: 576px) {
+    body.home .thePortfolios {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 992px) {
+    body.home .thePortfolios {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

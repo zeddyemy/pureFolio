@@ -1,0 +1,48 @@
+.servicesPage.layout {
+    min-height: 90vh;
+}
+#services {
+    padding: 70px 0px;
+}
+.serCard {
+    border: 1px solid var(--outline);
+    padding: 40px 8px;
+    text-align: center;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+.serCard i {
+    font-size: 80px;
+    color: var(--theme-clr)
+}
+.serCard label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.serCard label::after {
+    content: "";
+    display: block;
+    margin: 15px auto;
+    width: 10%;
+    border-radius: 31px;
+    border: 2px solid var(--theme-clr);
+    transition: var(--transition);
+}
+.serCard:hover label::after {
+    width: 30%;
+}
+.serCard span,
+.serCard a.btn {
+    font-family: var(--font-four);
+    font-size: .95em;
+    display: inline-block;
+}
+.serCard .btn {
+    margin: 10px auto;
+}
+
+@media screen and (min-width: 1440px) {
+    .serCard label {
+        font-size: 1.4em;
+    }
+}

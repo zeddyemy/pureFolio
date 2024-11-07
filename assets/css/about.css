@@ -1,0 +1,28 @@
+#about>.container .container {
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+.card.logo {
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.card.logo .cardImg {
+    margin: 0px;
+    border-radius: var(--round-conners);
+}
+
+#about .txtContain {
+    padding: 20px 0px;
+}
+
+@media screen and (min-width: 860px) {
+    #about>.container .container {
+        flex-direction: row;
+        gap: 0px 30px;
+    }
+    #about>.container .container>div {
+        width: 50%;
+    }
+}
