@@ -80,7 +80,7 @@ if (!function_exists('custom_post_type_portfolios')) {
     function get_portfolio_url() {
         $portfolioURL = get_post_meta(get_the_ID(), 'portfolio_url', true);
         if (!empty($portfolioURL)) :
-            echo '<a class="portfolio-url" href="' . $portfolioURL . '" target="_blank"> <span>View Website</span> </a>';
+            echo '<a class="portfolio-url" href="' . $portfolioURL . '" target="_blank"> <span>View Project</span> </a>';
         endif;
     }
 
