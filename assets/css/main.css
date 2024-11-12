@@ -291,12 +291,18 @@ span {
     transform: translateX(0);
     transition: transform .4s ease-out, background-color .4s linear;
 }
+
 .btn[class*="-pill"],
-.btn.pill {
+[class*="-pill"],
+.btn.pill,
+.pill {
     --btn-radius: 10em;
 }
+
 .btn[class*="-rounded"],
-.btn.rounded {
+[class*="-rounded"],
+.btn.rounded,
+.rounded {
     --btn-radius: calc(var(--round-conners) - 11px);
 }
 .btn[class*="ghost-"],
@@ -452,9 +458,10 @@ span {
 }
 .secCard {
     --sec-radius: 0px;
+    --base-height: 479px;
     color: #fff;
     flex-wrap: wrap;
-    min-height: 300px;
+    min-height: var(--base-height);
     position: relative;
     background: black;
     padding: 40px var(--site-pad);

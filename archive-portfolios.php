@@ -12,6 +12,6 @@ $pureFolioBodyClass[] = 'noHero';
 
 get_header();
 
-get_template_part('template-parts/portfolios-page', get_post_format());
+get_template_part('template-parts/portfolios-archive-page', get_post_format());
 
 get_footer();

@@ -60,6 +60,12 @@ function pureFolio_scripts() {
         }
         if ($pureFolioThemeMods['toggle_portfolios_sec'] == true || is_post_type_archive('portfolios')) {
             wp_enqueue_style('portfolios', get_pureFolio_assets('css') . 'portfolios.css');
+            wp_enqueue_style('portfolios-archive', get_pureFolio_assets('css') . 'portfolio-archive.css');
+
+            wp_enqueue_script('portfolio-filter', get_pureFolio_assets('js') . 'portfolio-filter.js', ['jquery'], null, true);
+            wp_localize_script('portfolio-filter', 'portfolioAjax', [
+                'ajaxurl' => admin_url('admin-ajax.php'),
+            ]);
         }
         if ($pureFolioThemeMods['toggle_blog_sec'] == true) {
             wp_enqueue_style('blog', get_pureFolio_assets('css') . 'blog.css');
@@ -101,6 +107,12 @@ function pureFolio_scripts() {
     if (is_post_type_archive('portfolios')) {
 
         wp_enqueue_style('portfolios', get_pureFolio_assets('css') . 'portfolios.css');
+        wp_enqueue_style('portfolios-archive', get_pureFolio_assets('css') . 'portfolio-archive.css');
+
+        wp_enqueue_script('portfolio-filter', get_pureFolio_assets('js') . 'portfolio-filter.js', ['jquery'], null, true);
+        wp_localize_script('portfolio-filter', 'portfolioAjax', [
+            'ajaxurl' => admin_url('admin-ajax.php'),
+        ]);
 
     } elseif (is_post_type_archive('services')) {
 

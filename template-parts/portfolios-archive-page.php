@@ -16,7 +16,7 @@ global $pureFolioThemeMods;
     <section class=" col-12 main">
         <?php
         // blog template part
-        get_template_part('template-parts/portfolios-page-parts/portfolios-post', get_post_format());
+        get_template_part('template-parts/portfolios-archive-parts/portfolios-post', get_post_format());
         ?>
     </section>
 </section>

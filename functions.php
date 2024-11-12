@@ -129,3 +129,39 @@ function custom_search_filter($query) {
     return $query;
 }
 add_action('pre_get_posts', 'custom_search_filter');
+
+
+function filter_portfolio_by_category()
+{
+    $category_slug = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : 'all';
+
+    $args = [
+        'post_type' => 'portfolios',
+        'posts_per_page' => -1,
+    ];
+
+    if ($category_slug !== 'all') {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'portfolio_category',
+                'field'    => 'slug',
+                'terms'    => $category_slug,
+            ],
+        ];
+    }
+
+    $portfolio_query = new WP_Query($args);
+
+    if ($portfolio_query->have_posts()) :
+        while ($portfolio_query->have_posts()) : $portfolio_query->the_post();
+            echo get_portfolio_card(); // Ensure get_portfolio_card() outputs the HTML for each post
+        endwhile;
+    else :
+        echo '<p>No portfolios found in this category.</p>';
+    endif;
+
+    wp_reset_postdata();
+    die();
+}
+add_action('wp_ajax_filter_portfolio', 'filter_portfolio_by_category');
+add_action('wp_ajax_nopriv_filter_portfolio', 'filter_portfolio_by_category');

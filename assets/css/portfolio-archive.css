@@ -1,0 +1,50 @@
+.portfolio-categories-filter {
+    margin: 20px 0px;
+}
+
+.portfolio-categories-filter ul {
+    list-style: none;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide Scrollbar in Firefox */
+}
+.portfolio-categories-filter ul::-webkit-scrollbar {
+    display: none; /* Hide Scrollbar in Chrome, Safari */
+}
+
+ul .category-filter {
+    border: 1px solid var(--sidebar-outline);
+    padding: 5px 20px;
+    border-radius: var(--btn-radius);
+    cursor: pointer;
+    color: var(--body-txt-clr);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    font-family: var(--font-four);
+    letter-spacing: 0.8px;
+}
+
+ul .category-filter.active {
+    background: var(--body-txt-clr);
+    color: var(--body-bg-clr);
+    font-weight: 600;
+}
+
+/* Disabled state for category filters */
+ul .category-filter.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.secCard .category-filter {
+    color: #fff;
+}
+.secCard .category-filter.active {
+    background: #e9e9e9;
+    color: #121418;
+}

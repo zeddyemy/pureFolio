@@ -31,6 +31,9 @@ include_once dirname(__FILE__) . '/pureFolio-theme-panel/blog-page-panel.php';
 // Singular blog Page panel
 include_once dirname(__FILE__) . '/pureFolio-theme-panel/single-page-panel.php';
 
+// Portfolios page Panel
+include_once dirname(__FILE__) . '/pureFolio-theme-panel/portfolio-page-panel.php';
+
 // Singular Portfolio Page panel
 include_once dirname(__FILE__) . '/pureFolio-theme-panel/single-folio-page-panel.php';
 

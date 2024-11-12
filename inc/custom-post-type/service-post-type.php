@@ -4,24 +4,24 @@
 if (!function_exists('custom_post_type_services')) {
     function custom_post_type_services() {
         $labels = array(
-            'name'               => __( 'Services' ),
-            'singular_name'      => __( 'Service' ),
-            'menu_name'          => __( 'Services' ),
-            'all_items'          => __( 'All Services' ),
-            'add_new'            => __( 'Add New' ),
-            'add_new_item'       => __( 'Add New Service' ),
-            'edit_item'          => __( 'Edit Service' ),
-            'new_item'           => __( 'New Service' ),
-            'view_item'          => __( 'View Service' ),
-            'search_items'       => __( 'Search Services' ),
-            'not_found'          => __( 'No services found' ),
-            'not_found_in_trash' => __( 'No services found in Trash' ),
-            'parent_item_colon'  => __( 'Parent Service:' ),
+            'name'               => __( 'Services', 'pureFolio'),
+            'singular_name'      => __( 'Service', 'pureFolio'),
+            'menu_name'          => __( 'Services', 'pureFolio'),
+            'all_items'          => __( 'All Services', 'pureFolio'),
+            'add_new'            => __('Add New Service', 'pureFolio'),
+            'add_new_item'       => __( 'Add New Service', 'pureFolio'),
+            'edit_item'          => __( 'Edit Service', 'pureFolio'),
+            'new_item'           => __( 'New Service', 'pureFolio'),
+            'view_item'          => __( 'View Service', 'pureFolio'),
+            'search_items'       => __( 'Search Services', 'pureFolio'),
+            'not_found'          => __( 'No services found', 'pureFolio'),
+            'not_found_in_trash' => __( 'No services found in Trash', 'pureFolio'),
+            'parent_item_colon'  => __( 'Parent Service:', 'pureFolio'),
         );
     
         $args = array(
-            'label'               => __('services'),
-            'description'         => __('Services offered by individual or brand'),
+            'label'               => __('services', 'pureFolio'),
+            'description'         => __('Services offered by individual or brand', 'pureFolio'),
             'labels'              => $labels,
             'public'              => true,
             'show_ui'             => true,
@@ -43,54 +43,12 @@ if (!function_exists('custom_post_type_services')) {
         );
     
         register_post_type('services', $args);
-    
-        // Add custom meta box for icon selection
-        add_action('add_meta_boxes', 'add_service_icon_meta_box');
-        add_action('save_post', 'save_service_icon_meta_box');
-    
-        function add_service_icon_meta_box() {
-            add_meta_box(
-                'service_icon',
-                'Service Icon',
-                'render_service_icon_meta_box',
-                'services',
-                'side',
-                'default'
-            );
-        }
-    
-        function render_service_icon_meta_box($post) {
-            $selected_icon = get_post_meta($post->ID, 'service_icon', true);
-            $icon_choices = get_icons_choices(true);
-    
-            echo '<label for="service_icon" style="display:block;margin:10px 0px;font-weight:bold;">Select an Icon:</label>';
-            echo '<select name="service_icon" id="service_icon">';
-            
-            if (is_array($icon_choices)) {
-                foreach ($icon_choices as $value => $label) {
-                    $selected = ($selected_icon === $value || (empty($selected_icon) && $value === 'bx bx-home')) ? 'selected="selected"' : '';
-                    echo '<option value="' . esc_attr($value) . '"' . $selected . '>' . esc_html($label) . '</option>';
-                }
-            }
-    
-            echo '</select>';
-        }
-    
-        function save_service_icon_meta_box($post_id) {
-            if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-                return;
-            }
-    
-            if (!current_user_can('edit_post', $post_id)) {
-                return;
-            }
-    
-            if (isset($_POST['service_icon'])) {
-                update_post_meta($post_id, 'service_icon', sanitize_text_field($_POST['service_icon']));
-            }
-        }
+
+        // Add custom meta boxes for service post type
+        require get_template_directory() . '/inc/custom-post-type/service/meta-boxes.php';
     }
+    
+    add_action( 'init', 'custom_post_type_services', 0 );
 }
-add_action( 'init', 'custom_post_type_services', 0 );
 
 include_once dirname(__FILE__) . '/none/no-service.php';
