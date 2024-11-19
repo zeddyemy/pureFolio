@@ -47,6 +47,43 @@ jQuery(document).ready(function ($) {
         $(this).toggleClass('invalid', !isValid);
 		changePublishState(isValid);
     });
+
+
+	/**
+	 * Text URL Custom Control
+	 *
+	 * Handles real-time updates for text url inputs.
+	 */
+	$('.customize-control-text_url').each(function () {
+		const textInput = $(this).find(".customize-txt-url-t-input");
+		const urlInput = $(this).find(".customize-txt-url-u-input");
+		const errMsg = $(this).find("p.input-msg");
+
+
+		// Listen for input changes and update Customizer settings
+		textInput.on('input', function () {
+			
+		});
+
+		urlInput.on('input', function () {
+			var url = $(this).val();
+			// Check if the input field is empty
+			if (url.trim() !== '') {
+				var isValid = isValidUrl(url);
+	
+				
+				errMsg.toggleClass('invalid', !isValid);
+				$(this).toggleClass("invalid", !isValid);
+				changePublishState(isValid);
+				
+			} else {
+				errMsg.toggleClass("invalid", false);
+				$(this).toggleClass("invalid", false);
+				changePublishState(true);
+			}
+			
+		});
+	});
 	
 
 	/**

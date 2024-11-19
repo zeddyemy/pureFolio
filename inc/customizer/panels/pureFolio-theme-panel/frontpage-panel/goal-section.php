@@ -8,7 +8,7 @@ $wp_customize->add_section(
     array(
         'title'    => __("Goal Section", "pureFolio" ),
 		'description' => esc_html__("Highlight your objectives and aspirations with the Goal section on your front page. This section empowers you to control the visibility, title, and content of your goals, allowing you to share your mission as a user or brand. Enhance the visual appeal with a customizable background image, and use tags to briefly express your goals, such as 'innovative,' 'insightful,' and more." ),
-		'priority' => 20,
+		'priority' => 30,
 		'panel' => 'frontpage_panel_id',
 	)
 );

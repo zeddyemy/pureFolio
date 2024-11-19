@@ -31,6 +31,7 @@ if (!function_exists('pureFolio_theme_mods')) {
             'nav_text_transform'            => get_theme_mod('nav_text_transform', 'capitalize'),
             'title_text_transform'          => get_theme_mod('title_text_transform', 'capitalize'),
 
+            // mods for frontpage hero section
             'toggle_hero_header_sec'        => get_theme_mod('toggle_hero_header_sec', true),
             'hero_header_sec_img'           => get_theme_mod('hero_header_sec_img', get_pureFolio_assets('img') . 'hands-1.jpg'),
             'hero_header_sec_title'         => get_theme_mod('hero_header_sec_title', 'Stay ahead of the curve with our forward thinking.'),
@@ -39,6 +40,7 @@ if (!function_exists('pureFolio_theme_mods')) {
             'hero_header_sec_btn_url'       => get_theme_mod('hero_header_sec_btn_url', '#'),
             'hero_header_sec_btn_text'      => get_theme_mod('hero_header_sec_btn_text', 'Get in touch'),
             
+            // mods for frontpage about section
             'toggle_about_sec'              => get_theme_mod('toggle_about_sec', true),
             'toggle_about_title'            => get_theme_mod('toggle_about_title'),
             'about_sec_title'               => get_theme_mod('about_sec_title', 'Who Are We?'),
@@ -49,6 +51,7 @@ if (!function_exists('pureFolio_theme_mods')) {
             'toggle_about_sec_img'          => get_theme_mod('toggle_about_sec_img', true),
             'about_sec_img'                 => get_theme_mod('about_sec_img', get_pureFolio_assets('img') . 'pure-folio.jpg'),
 
+            // mods for frontpage goal section
             'toggle_goal_sec'               => get_theme_mod('toggle_goal_sec', true),
             'goal_sec_img'                  => get_theme_mod('goal_sec_img', get_pureFolio_assets('img') . 'team.jpg'),
             'goal_sec_title'                => get_theme_mod('goal_sec_title', 'Our Goal'),
@@ -56,6 +59,7 @@ if (!function_exists('pureFolio_theme_mods')) {
             'toggle_goal_tags'              => get_theme_mod('toggle_goal_tags', true),
             'goal_tags'                     => get_theme_mod('goal_tags', 'Captivating, Insightful, fast'),
 
+            // mods for frontpage service section
             'toggle_services_sec'           => get_theme_mod('toggle_services_sec', true),
             'service_section_title'         => get_theme_mod('service_section_title', 'Our Services'),
             'frontpage_service_card_1'      => get_theme_mod('frontpage_service_card_1', 0),
@@ -65,15 +69,19 @@ if (!function_exists('pureFolio_theme_mods')) {
             'additional_card_content'       => get_theme_mod('additional_card_content', 'Our team of creative thinkers simplify the complex challenges businesses face everyday. Our services are tailored to offer the most effective solutions, to grow your business.'),
             'additional_card_btn'           => get_theme_mod('additional_card_btn', 'Explore More'),
 
+            // mods for frontpage portfolio section
             'toggle_portfolios_sec'         => get_theme_mod('toggle_portfolios_sec', true),
             'portfolios_sec_title'          => get_theme_mod('portfolios_sec_title', 'Our Portfolio'),
             'portfolios_count'              => get_theme_mod('portfolios_count', 9),
 
+            // mods for frontpage blog section
             'toggle_blog_sec'               => get_theme_mod('toggle_blog_sec', true),
             'blog_sec_title'                => get_theme_mod('blog_sec_title', 'Our Latest Blogs'),
 
+            // mods for button style
             'button_style'                  => get_theme_mod('button_style', 'normal'),
 
+            // mods for single page
             'toggle_single_sidebar'         => get_theme_mod('toggle_single_sidebar', true),
             'toggle_single_featured_img'    => get_theme_mod('toggle_single_featured_img', true),
             'toggle_single_excerpt'         => get_theme_mod('toggle_single_excerpt', true),
@@ -86,9 +94,11 @@ if (!function_exists('pureFolio_theme_mods')) {
             'toggle_pinterest_btn'          => get_theme_mod('toggle_pinterest_btn', false),
             'toggle_linkedin_btn'           => get_theme_mod('toggle_linkedin_btn', false),
 
+            // mods for pages
             'pages_hero_header_img'         => get_theme_mod('pages_hero_header_img', get_pureFolio_assets('img') . 'pages-img.jpg'),
             'toggle_pages_featured_img'     => get_theme_mod('toggle_pages_featured_img', false),
 
+            // mods for blog page
             'toggle_blog_sidebar'           => get_theme_mod('toggle_blog_sidebar', true),
             'toggle_blogPage_title'         => get_theme_mod('toggle_blogPage_title', true),
             'blogPage_title'                => get_theme_mod('blogPage_title', 'Blog Posts'),
@@ -97,12 +107,58 @@ if (!function_exists('pureFolio_theme_mods')) {
             'toggle_folioArchive_title'         => get_theme_mod('toggle_folioArchive_title', true),
             'folioArchive_title'                => get_theme_mod('folioArchive_title', 'Our Portfolio'),
 
+            // mods for single portfolio page
             'toggle_folio_hero_header'      => get_theme_mod('toggle_folio_hero_header', true),
             'folio_hero_header_img'         => get_theme_mod('folio_hero_header_img', get_pureFolio_assets('img') . 'img3.jpg'),
             'toggle_folio_featuredImg'      => get_theme_mod('toggle_folio_featuredImg', false),
         );
 
-        return apply_filters('pureFolio_theme_mods', $pureFolio_mods);
+        // mods for frontpage contact section
+        $contactSec_mods = array(
+            'toggle_contact_sec'            => get_theme_mod('toggle_contact_sec', true),
+            'toggle_contact_title'          => get_theme_mod('toggle_contact_title', true),
+            'contact_sec_title'             => get_theme_mod('contact_sec_title', 'Contact Us'),
+
+            'github_profile'            => array(
+                'txt' => get_theme_mod('github_profile_txt', 'myUsername'),
+                'url' => get_theme_mod('github_profile_url', '#')
+            ),
+
+            'linkedin_profile'          => array(
+                'txt' => get_theme_mod('linkedin_profile_txt', 'LinkedIn Name'),
+                'url' => get_theme_mod('linkedin_profile_url', '#')
+            ),
+
+            'mail_profile'              => array(
+                'txt' => get_theme_mod('mail_profile_txt', 'example@mail.com'),
+                'url' => get_theme_mod('mail_profile_url', 'example@mail.com')
+            ),
+
+            'x_profile'                 => array(
+                'txt' => get_theme_mod('x_profile_txt', ''),
+                'url' => get_theme_mod('x_profile_url', '')
+            ),
+
+            'facebook_profile'          => array(
+                'txt' => get_theme_mod('facebook_profile_txt', ''),
+                'url' => get_theme_mod('facebook_profile_url', '')
+            ),
+
+            'instagram_profile'         => array(
+                'txt' => get_theme_mod('instagram_profile_txt', ''),
+                'url' => get_theme_mod('instagram_profile_url', '')
+            ),
+
+            'whatsapp_profile'          => array(
+                'txt' => get_theme_mod('whatsapp_profile_txt', ''),
+                'url' => get_theme_mod('whatsapp_profile_url', '')
+            ),
+
+        );
+
+        $theme_mods = $pureFolio_mods + $contactSec_mods;
+
+        return apply_filters('pureFolio_theme_mods', $theme_mods);
     }
 }
 

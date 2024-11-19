@@ -8,7 +8,7 @@ $wp_customize->add_section(
     array(
         'title'    => __("Services Section", "pureFolio"),
         'description' => esc_html__("The services you offer as an Individual or as a Brand."),
-        'priority' => 30,
+        'priority' => 40,
         'panel' => 'frontpage_panel_id',
     )
 );

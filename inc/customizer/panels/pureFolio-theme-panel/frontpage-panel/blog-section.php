@@ -8,7 +8,7 @@ $wp_customize->add_section(
     array(
         'title'    => __("Blog Section", "pureFolio"),
         'description' => esc_html__("Blogs written for your site", 'pureFolio'),
-        'priority' => 50,
+        'priority' => 70,
         'panel' => 'frontpage_panel_id',
     )
 );

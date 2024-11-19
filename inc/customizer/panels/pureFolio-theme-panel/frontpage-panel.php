@@ -33,5 +33,8 @@ include_once dirname(__FILE__) . '/frontpage-panel/portfolios-section.php';
 // blog Section with its settings and controls.
 include_once dirname(__FILE__) . '/frontpage-panel/blog-section.php';
 
+// Contact Section with its settings and controls.
+include_once dirname(__FILE__) . '/frontpage-panel/contact-section.php';
+
 // "Other settings" Section with its settings and controls.
 include_once dirname(__FILE__) . '/frontpage-panel/other-settings-section.php';

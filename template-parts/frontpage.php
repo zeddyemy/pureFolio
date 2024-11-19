@@ -39,5 +39,9 @@ global $pureFolioThemeMods;
     if ($pureFolioThemeMods['toggle_blog_sec'] == true) {
         get_template_part('template-parts/frontpage-parts/blog-section', get_post_format());
     }
+    
+    if ($pureFolioThemeMods['toggle_contact_sec'] == true) {
+        get_template_part('template-parts/frontpage-parts/contact-section', get_post_format());
+    }
     ?>
 </section>

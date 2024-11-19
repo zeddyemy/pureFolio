@@ -70,6 +70,10 @@ function pureFolio_scripts() {
         if ($pureFolioThemeMods['toggle_blog_sec'] == true) {
             wp_enqueue_style('blog', get_pureFolio_assets('css') . 'blog.css');
         }
+
+        if ($pureFolioThemeMods['toggle_contact_sec'] == true) {
+            wp_enqueue_style('contact', get_pureFolio_assets('css') . 'contact.css');
+        }
     }
 
     if (is_single() || is_page()) {

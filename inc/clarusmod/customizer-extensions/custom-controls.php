@@ -21,8 +21,14 @@ if (class_exists('WP_Customize_Control')) {
     // Raw Text custom control class
     require_once trailingslashit(dirname(__FILE__)) . 'custom-controls/class-raw-text-custom-control.php';
 
+    // Divider custom control class
+    require_once trailingslashit(dirname(__FILE__)) . 'custom-controls/class-divider-custom-control.php';
+
     // URL custom control class
     require_once trailingslashit(dirname(__FILE__)) . 'custom-controls/class-url-custom-control.php';
+
+    // Text URL custom control class
+    require_once trailingslashit(dirname(__FILE__)) . 'custom-controls/class-txt-url-custom-control.php';
     
     // Select Category custom control class
     require_once trailingslashit(dirname(__FILE__)) . 'custom-controls/class-category-select-custom-control.php';

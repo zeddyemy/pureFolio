@@ -86,3 +86,13 @@ if (!function_exists('clarusmod_integer_sanitization')) {
         return (int) $input;
     }
 }
+
+// sanitization for text and link
+if (!function_exists('clarusmod_txt_url_sanitization')) {
+    function clarusmod_txt_url_sanitization($value) {
+        return array(
+            'text' => sanitize_text_field($value['text']),
+            'url'  => esc_url_raw($value['url']),
+        );
+    }
+}

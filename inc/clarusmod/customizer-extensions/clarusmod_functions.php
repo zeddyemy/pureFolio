@@ -13,6 +13,7 @@ if (!function_exists('clarusmod_customizer_default_vals')) {
             'select_boxicon_control'        => 'none',
             'searchable_select_control'     => '',
             'btn_style_control'             => 'normal',
+            'contact_sec_divider_ctrl1'     => '',
         );
 
         return apply_filters('clarusmod_customizer_default_vals', $default_vals);

@@ -233,6 +233,72 @@ if (!function_exists('get_icons_choices')) {
     }
 }
 
+if (!function_exists('display_socials')) {
+    function display_socials() {
+        global $pureFolioThemeMods;
+
+        $socials = [
+            'github' => [
+                'text' => $pureFolioThemeMods['github_profile']['txt'],
+                'url' => $pureFolioThemeMods['github_profile']['url'],
+                'icon' => 'bxl-github'
+            ],
+            'linkedin' => [
+                'text' => $pureFolioThemeMods['linkedin_profile']['txt'],
+                'url' => $pureFolioThemeMods['linkedin_profile']['url'],
+                'icon' => 'bxl-linkedin'
+            ],
+            'mail' => [
+                'text' => $pureFolioThemeMods['mail_profile']['txt'],
+                'url' => 'mailto:' . $pureFolioThemeMods['mail_profile']['url'],
+                'icon' => 'bx-envelope'
+            ],
+            '𝕏 (Twitter)' => [
+                'text' => $pureFolioThemeMods['x_profile']['txt'],
+                'url' => $pureFolioThemeMods['x_profile']['url'],
+                'icon' => 'bxl-x-twitter'
+            ],
+            'facebook' => [
+                'text' => $pureFolioThemeMods['facebook_profile']['txt'],
+                'url' => $pureFolioThemeMods['facebook_profile']['url'],
+                'icon' => 'bxl-facebook'
+            ],
+            'instagram' => [
+                'text' => $pureFolioThemeMods['instagram_profile']['txt'],
+                'url' => $pureFolioThemeMods['instagram_profile']['url'],
+                'icon' => 'bxl-instagram'
+            ],
+            'whatsapp' => [
+                'text' => $pureFolioThemeMods['whatsapp_profile']['txt'],
+                'url' => $pureFolioThemeMods['whatsapp_profile']['url'],
+                'icon' => 'bxl-whatsapp'
+            ],
+        ];
+        ?>
+
+        <div class="contact-icons flex flexCenter">
+            <?php foreach ($socials as $key => $social) :
+                if (!empty($social['text']) && !empty($social['url'])) : ?>
+                    <a href="<?php echo $social['url']; ?>" target="_blank">
+                        <div class="contact-icon-box flex <?php echo $key; ?>-ico" data-aos="fade-up" data-aos-easing="ease-in-out-quart">
+                            <span class="flex">
+                                <i class='bx <?php echo $social['icon']; ?>'></i>
+                            </span>
+
+                            <div class="contact-info flex">
+                                <h4> <?php echo ucfirst($key); ?> </h4>
+                                <p> <?php echo $social['text']; ?> </p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endif; 
+            endforeach; ?>
+        </div>
+
+        <?php
+    }
+}
+
 // Get all Published Pages except blog page
 $query_blog_page = new WP_Query(
     array(

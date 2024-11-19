@@ -8,7 +8,7 @@ $wp_customize->add_section(
 	array(
 		'title'    => __("About Section", "pureFolio"),
 		'description' => esc_html__('Tailor your About section on the front page to introduce yourself or your brand in a captivating way. Control the visibility of the About section, title, content, and imagery. Personalize the title, add rich content, and showcase your story with optional \'Read More\' button customization. Upload your image or brand logo for a personalized touch.', 'pureFolio'),
-		'priority' => 10,
+		'priority' => 20,
 		'panel' => 'frontpage_panel_id',
 	)
 );
