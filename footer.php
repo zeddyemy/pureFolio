@@ -50,7 +50,7 @@ if (is_active_sidebar('footer-widget-one') || is_active_sidebar('footer-widget-t
             echo pureFolio_copyright();
         }
         if ($pureFolioThemeMods['toggle_footer_dev_credits']) {
-            echo pureFolio_author_url('https://zeddyemy.github.io', 'Emmanuel Olowu');
+            echo pureFolio_author_url('https://eshomonu.com', 'Emmanuel Olowu');
         }
         if ($pureFolioThemeMods['toggle_footer_platform_info']) {
             echo the_wp_link();
